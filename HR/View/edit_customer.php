@@ -97,53 +97,48 @@ include '../DB/add_hr.php';
                  <br>
                 <h1><b>Customer Information</b></h1>
                 <div class="edit_employee_info">
-                    <form action="../DB/add_customer.php" method="POST">
-                        <table id="hr">
-                            <thead class="form-style">
-                                <tr>
-                                    <td><b>Name:</b></td>
-                                    <td><input type="text" name="name" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Email:</b></td>
-                                    <td><input type="email" name="email" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Contact Number:</b></td>
-                                    <td><input type="number" name="number" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Password:</b></td>
-                                    <td><input type="password" name="password" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Address:</b></td>
-                                    <td><input type="text" name="address" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Joining Date:</b></td>
-                                    <td><input type="date" name="joining" required></td>
-                                </tr>
-                            </thead>
-                        </table>
-                        <button type="submit" class="btn">ADD Customer</button>
-                    </form>
-
+                    <table id="hr">
+                        <thead class="form-style">
+                            <tr>
+                                <td><b>Name:</b></td>
+                                <td><input type="text" name="name" required></td>
+                            </tr>
+                            <tr>
+                                <td><b>Email:</b></td>
+                                <td><input type="email" name="email" required></td>
+                            </tr>
+                            <tr>
+                                <td><b>Contact Number:</b></td>
+                                <td><input type="number" name="number" required></td>
+                            </tr>
+                            <tr>
+                                <td><b>Password:</b></td>
+                                <td><input type="password" name="password" required></td>
+                            </tr>
+                            <tr>
+                                <td><b>Address:</b></td>
+                                <td><input type="text" name="address" required></td>
+                            </tr>
+                            <tr>
+                                <td><b>Joining Date:</b></td>
+                                <td><input type="date" name="joining" required></td>
+                            </tr>
+                        </thead>
+                    </table>
+                    
                     <form action="../DB/update_customer.php" method="POST">
-                        <table id="acc">
-                            <thead class="form-style">
+                    <table id="acc">
+                        <thead class="form-style">
+                            <tr>                                    <td><b>ID:</b></td>
+                                <td><input type="number" name="id" required></td>
+                            </tr>
                                 <tr>
-                                    <td><b>ID:</b></td>
-                                    <td><input type="number" name="id" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Name:</b></td>
-                                    <td><input type="text" name="name" required></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Email:</b></td>
-                                    <td><input type="email" name="email" required></td>
-                                </tr>
+                                 <td><b>Name:</b></td>
+                                <td><input type="text" name="name" required></td>
+                            </tr>
+                            <tr>                                    <td><b>Email:</b></td>
+                                <td><input type="email" name="email" required></td>
+                            </tr>
                                 <tr>
                                     <td><b>Contact Number:</b></td>
                                     <td><input type="number" name="number" required></td>
