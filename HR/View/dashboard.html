@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ShopLio</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Top left -->
+        <header>
+            <div class="top">
+                <div class="logo">
+                    <h2>Hello, HR!</h2>
+                </div>
+            </div>
+
+            <!-- left panel option bar -->
+            <div class="sidebar">
+                <a href="dashboard.html" class="active">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+
+                <a href="profile.php">
+                    <span class="material-symbols-outlined">person</span>
+                    <h3>Profile</h3>
+                </a>
+
+                <a href="employee.php">
+                    <span class="material-symbols-outlined">article_person</span>
+                    <h3>Employee Information</h3>
+                </a>
+
+                <a href="edit_hr.php">
+                    <span class="material-symbols-outlined">person_add_disabled</span>
+                    <h3>Add/Remove HR</h3>
+                </a>
+
+                <a href="edit_accountant.php">
+                    <span class="material-symbols-outlined">person_add_disabled</span>
+                    <h3>Add/Remove Accountant</h3>
+                </a>
+
+                <a href="edit_deliveryman.php">
+                    <span class="material-symbols-outlined">person_add_disabled</span>
+                    <h3>Add/Remove Delivery Man</h3>
+                </a>
+
+                <a href="edit_customer.php">
+                    <span class="material-symbols-outlined">person_add_disabled</span>
+                    <h3>Add/Remove Customer</h3>
+                </a>
+
+                <a href="edit_product.php">
+                    <span class="material-symbols-outlined">assessment</span>
+                    <h3>Add/Remove Product</h3>
+                </a>
+
+                <a href="leave_days.php">
+                    <span class="material-symbols-outlined">event</span>
+                    <h3>Leave List</h3>
+                    <span class="mgs_count">5</span>
+                </a>
+
+                <a href="give_leave.php">
+                    <span class="material-symbols-outlined">event</span>
+                    <h3>Leave Management</h3>
+                </a>
+
+                <a href="training.php">
+                    <span class="material-symbols-outlined">cast_for_education</span>
+                    <h3>Training & Development</h3>
+                </a>
+
+                <a href="../../Customer/View/login.php">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+
+        </header>
+
+        <!-- Top center -->
+        <main>
+            <div class="center">
+                <div class="top">
+                    <h1>Dashboard</h1>
+
+                    <!-- Date Selection search -->
+                    <div class="date">
+                        <input type="date">
+                    </div>
+                    
+                    <!-- Middle Left Growth flow -->
+                    <div class="insights">
+                        <div class="sales" style="box-shadow: 0 0 15px rgb(129, 164, 188); padding: 15px; border-radius: 10px;">
+                            <span class="material-symbols-outlined">trending_up</span>
+                            <div class="middle" style="gap: 10px">
+                                <div>
+                                    <h3>Total Sales</h3>
+                                    <h1>$21,050</h1>
+                                </div>
+                                <div class="progress" style="margin-left: 50px">
+                                    <svg>
+                                        <circle r="30" cy="40" cx="40"></circle>
+                                    </svg>
+                                    <div class="number">76%</div>
+                                </div>
+                            </div>
+                            <small>Last 24 Hours</small>
+                        </div>
+
+                        <!-- Middle center Attendance sheet -->
+                        <div class="attendance" style="box-shadow: 0 0 15px rgb(129, 164, 188); padding: 15px; border-radius: 10px;">
+                            <span class="material-symbols-outlined">dataset</span>
+                            <div class="middle">
+                                <div>
+                                    <h3>Employee Attendance</h3>
+                                    <h1>173</h1>
+                                </div>
+                                <div class="progress" style="margin-left: 50px">
+                                    <svg>
+                                        <circle r="30" cy="40" cx="40"></circle>
+                                    </svg>
+                                    <div class="number">95%</div>
+                                </div>
+                            </div>
+                            <small>Today</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Order Summary DB -->
+
+                <div class = "recent-orders">
+                    <h1><br>Recent Trendings</h1>
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <td><b>Product Name</b></td>
+                            <td><b>Product Code</b></td>
+                            <td><b>Product Price</b></td>
+                            <td><b>Product Status</b></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Demons Layer T-shirt</td>
+                                <td>DLT-249</td>
+                                <td>$19.99</td>
+                                <td class = "primary">In Stock</td>
+                            </tr>
+                            <tr>
+                                <td>Samsung Galaxy S25 Ultra</td>
+                                <td>SGS25U-512</td>
+                                <td>$1,199.99</td>
+                                <td class = "primary">In Stock</td>
+                            </tr>
+                            <tr>
+                                <td>iPhone 14 Pro Max</td>
+                                <td>IP14PM-256</td>
+                                <td>$1,099.99</td>
+                                <td class = "primary">In Stock</td>
+                            </tr>
+                            <tr>
+                                <td>Redmi Note 14 Pro</td>
+                                <td>RN14P-256</td>
+                                <td>$899.99</td>
+                                <td class = "warning">Out of Stock</td>
+                            </tr>
+                            <tr>
+                                <td>ASUS ROG Zephyrus G15 GA503RM Ryzen 7 6800HS Gaming Laptop</td>
+                                <td>GA503RM-6800HS</td>
+                                <td>$2,499.99</td>
+                                <td class = "primary">In Stock</td>
+                            </tr>
+                            <tr>
+                                <td>Lenovo LOQ 15IAX9 (83GS006LLK)</td>
+                                <td>LOQ15IAX9</td>
+                                <td>$1,199.99</td>
+                                <td class = "warning">Out of Stock</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Top right -->
+        <div class="right">
+            <div class="top">
+                <div class="theme">
+                    <span class = "material-symbols-outlined">dark_mode</span>
+                    <span class = "material-symbols-outlined active">light_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>Naimul</b></p>
+                        <p>HR</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-pic">
+                        <a href="profile.php"><img src="../Img/HR_logo.jpg"></a>
+                    </div>
+                </div>
+            </div>
+                <!-- Recent Activities -->
+                 <div class="recent_activity">
+                    <h2>Recent Activities</h2>
+                    
+                    <div class="updates">
+                        <div class = "profile-pic">
+                            <img src="../img/HR_logo.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>HR, Naimul</b> Updated his profile picture</p>
+                        </div>
+
+                        <div class="profile-pic">
+                            <img src="../img/Acc_Logo.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Accountant, Akib</b> Reviewd the salery sheet.</p>
+                        </div>
+
+                        <div class="profile-pic">
+                            <img src="../img/Del_Logo.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Delivery Manager, Nipul</b> Checked the delivery status.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

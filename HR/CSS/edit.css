@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;800&display=swap');
+
+:root{
+    --clr-primary: #7380ec;
+    --clr-danger: #ff7782;
+    --clr-success: #41f1b6;
+    --clr-white: #fff;
+    --clr-info-dark: #7d8da1;
+    --clr-info-light: #dce1eb;
+    --clr-dark: #363949;
+    --clr-warning: #ff4edc;
+    --clr-light: rgba(132, 139, 200, 0.18);
+    --clr-primary-variant: #111e88;
+    --clr-dark-variant: #677483;
+    --clr-color-background: #f6f6f9;
+
+    --card-border-radius: 10px;
+    --border-radius-1: 4px;
+    --border-radius-2: 8px;
+    --border-radius-3: 12px;
+
+    --card-padding: 12px;
+    --padding-1: 8px;
+    --box-shadow: 0 10px 15px var(--clr-light);
+}
+
+.dark{
+    --clr-color-background: #181a1e;
+    --clr-white: #202528;
+    --clr-light: rgba(0, 0, 0, 0.4);
+    --clr-dark: #edeffd;
+    --clr-dark-variant: #677483;
+    --box-shadow: 0 10px 15px var(--clr-light);
+}
+
+
+/* Global Styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 15px;
+    background: var(--clr-color-background);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    gap: 10px;
+    grid-template-columns: 15% auto 15%;
+    margin: 0 auto;
+}
+
+a{
+    color: var(--clr-dark);
+}
+
+h1{
+    font-weight: 800;
+    font-size: 25px;
+}
+
+h3{
+    font-size: 14px;
+}
+
+small{
+    font-size: 12px;
+}
+
+.profile-pic img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.text-muted{
+    color: var(--clr-info-dark);
+}
+
+p{
+    color: var(--clr-dark-variant);
+}
+
+b{
+    color: var(--clr-dark);
+}
+
+.primary{
+    color: var(--clr-primary);
+}
+
+.success{
+    color: var(--clr-success);
+}
+
+.danger{
+    color: var(--clr-danger);
+}
+
+.warning{
+    color: var(--clr-warning);
+}
+
+/* Header Styles (Sidebar) */
+
+header .top{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Sidebar Styles */
+
+header .sidebar{
+    background-color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    top: 1px;
+}
+
+/* Sidebar icon & text alignment */
+
+header .sidebar a{
+    display: flex;
+    color: var(--clr-info-dark);
+    margin: 0;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
+}
+
+/* Sidebar logout text link gap */
+
+header .sidebar a:last-child{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Active link styles */
+
+header .sidebar a.active{
+    background: var(--clr-light);
+    color: var(--clr-primary);
+    margin-left: 0;
+    border-left: 5px solid var(--clr-primary);
+}
+
+header .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 100%;
+    background-color: var(--clr-primary);
+}
+
+/* Sidebar cursor animation styles */
+
+header .sidebar a:hover span{
+    margin-left: 5px;
+}
+
+/* Sidebar notification marking */ 
+
+header .sidebar a span.mgs_count{
+    background: var(--clr-danger);
+    color: var(--clr-white);
+    padding: 2px 5px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/* Main Styles (Dashboard) */
+
+main{
+    margin-top: 15px;
+    width: auto;
+}
+
+/* Date Styles */
+
+main .date{
+    display: inline-block;
+    background-color: var(--clr-white);
+    border-radius: var(--border-radius-1);
+    margin-top: 15px;
+    padding: 1px 1.6px;
+    cursor: pointer;
+}
+
+/* Total sales box size */
+
+section{
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .insights{
+    background-color: var(--clr-white);
+    padding: var(--card-padding);
+    margin-top: 20px;
+    grid-template-columns: 20% auto 20%;
+    gap: 50px;
+}
+
+/* Total sales box icon styles */
+
+main .insights span{
+    background: coral;
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--clr-white);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+main .insights .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Progress Circle Styles */
+
+main .insights .progress{
+    position: relative;
+    height: 68px;
+    width: 68px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main .insights svg{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 0;
+}
+
+main .insights svg circle{
+    fill: none;
+    stroke: var(--clr-primary);
+    stroke-width: 5;
+    transform: rotate(270, 80, 80);
+    cursor: pointer;
+}
+
+main .insights .sales svg circle{
+    stroke-dashoffset: 10;
+    stroke-dasharray: 160;
+}
+
+main .insights .attendance svg circle{
+    stroke-dashoffset: 20;
+    stroke-dasharray: 190;
+}
+
+/* Progress Circle Number Styles */
+
+main .insights .attendance .number{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 10%;
+    padding: 8px;
+    background-color: #6c63ff;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+} 
+
+.form-style input {
+    width: 200%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+div.info{
+    border-color: 1px solid black;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    align-items: center;
+}
+
+.hr{
+    min-width: 800px;
+    width: 100%;
+    height: 50vh;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
+/* */
+
+.table-box {
+    background: var(--clr-white);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin: 30px 0;
+    overflow-x: auto; /* allows horizontal scroll on smaller screens */
+}
+
+/* Table inside the box */
+.table-box table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table-box th, 
+.table-box td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--clr-info-light);
+}
+
+.table-box th {
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-photo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #7380ec;
+    position: fixed;
+    top: 15%;
+    right: 6%;
+    cursor: pointer;
+}
