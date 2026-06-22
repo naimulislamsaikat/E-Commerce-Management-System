@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop-lio</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <!-- daisy ui cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="body-login">
+    <!-- Start Header section -->
+    <header>
+        <nav class="nav">
+            <figure class="nav-img">
+                <h1 class="logo">Shop<span>Lio</span></h1>
+                <!-- <img src="./assets/shopLio.jpg" alt="panda logo"> -->
+            </figure>
+            <div class="nav-search-btn">
+                <input type="search" placeholder="Search here">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li class="products-list" id="products-list"><a href="#">Products<i class="fa-solid fa-circle-chevron-down"></i></a>
+                   <ul class="dropdown" id="products-menu">
+                      <li><a id="watch" href="./watch.html">Watch</a></li>
+                      <li><a id="bag" href="./bag.html">Bag</a></li>
+                      <li><a id="shoes" href="./shoes.html">Shoes</a></li>
+                   </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="./login.php">Login</a></li>
+                <li><a href="" id="profile">Profile<i class="fa-solid fa-user"></i></a></li>
+                <li><a id="cart-icon" href="">Cart<i class="fa-solid fa-cart-shopping"></i> <span class="cart-item-count"></span></a></li>
+                <!-- extra -->
+    
+            </ul>
+        </nav>
+
+    </header>
+    <!-- End Header section -->
+     <!-- profile section -->
+    <div class="profile">
+        <h2 style="text-align: center; font-size: 24px; margin-bottom: 10px; margin-top: 10px; font-weight: bold;">Your Profile</h2>
+        <hr style="margin-left: 20px; margin-right: 20px;">    
+           <p><button id="view-profile"><i class="fa-regular fa-circle-user" style="margin-right:10px"></i>Edit Profile<i class="fa-solid fa-angle-right right-arrow " style="margin-left: 135px;"></i></button></p>
+           <p><button><i class="fa-solid fa-gear" style="margin-right:10px"></i>Settings And Privacy<i class="fa-solid fa-angle-right right-arrow " style="margin-left: 60px;"></i></button></p>
+           <p><button><i class="fa-solid fa-question" style="margin-right:10px"></i>Help and Support<i class="fa-solid fa-angle-right right-arrow " style="margin-left: 80px;"></i></button></p>
+           <p><button id="log-out-btn"><i class="fa-solid fa-right-from-bracket log-out" style="margin-right:10px"></i>Log Out<i class="fa-solid fa-angle-right right-arrow " style="margin-left: 155px;"></i></button></p>
+    </div>
+    <!-- start view cart section -->
+    <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div   id="cart" >
+    
+        </div>
+         <!-- <div class="cart-content">
+             <div class="cart-box">
+                <img class="cart-img" src="./assets/watches/1.jpg" alt="">
+                <div class="cart-detail">
+                    <h2 class="cart-product-title">Casual watch</h2>
+                    <span class="cart-price">$100</span>
+                    <div class="cart-quantity">
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-trash cart-remove"></i>
+            </div>
+        </div> -->
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div>$<span class="total-price">0</span></div>
+        </div>
+        <button class="btn-buy" id="buy-btn">Buy Now</button>
+        <i class="fa-solid fa-xmark" id="cart-close"></i>
+    </div>
+    <!-- end view cart section -->
+     <!-- payment method -->
+      <section class="payment-method">
+      
+        <div>
+            <form class="form" action="../PHP/checkout.php" method="post" style="padding: 20px; border-radius: 15px; height: 500px;">
+                <h2 style="margin-bottom: 20px;">Payment Procedure</h2>
+                <input type="hidden" name="total-price" id="checkout">
+                <input id="p-name" type="text" name="name" placeholder="Enter Your Name" style="padding: 10px; margin-bottom: 15px; border-radius: 8px;" required><br>
+                <input id="p-email" type="email" name="email" placeholder="Enter Your Email" style="padding: 10px; margin-bottom: 15px; border-radius: 8px;" required><br>
+                <input id="p-phn" type="text" name="phone" placeholder="Enter Your Phone Number" style="padding: 10px; margin-bottom: 15px; border-radius: 8px;" required><br>
+                <label for="" style="font-size: 18px; font-weight: 600;">Select Area:</label> <br>
+                <select name="area" id="" placeholder="" style="padding:10px 50px 10px 50px; border-radius: 8px; margin-top: 10px; margin-bottom: 10px; " required>
+                    <option value="">--select--</option>
+                    <option value="">Bashundhra</option>
+                    <option value="">Uttara</option>
+                    <option value="">Mirpur</option>
+                </select>
+                <br>
+                <label for="" style="margin-top: 15px;">Select Payment Method:</label>
+                <label><input type="radio" name="hobby" value="reading"> Bkash</label>
+                <label><input type="radio" name="hobby" value="traveling"> Nagad</label>
+                <hr style="margin-top: 10px; margin-bottom: 10px;">
+                <p id="p-name"></p>
+                <span id="check" style="font-size: 18px; font-weight: 600;">Total: $</span><span id="total-p" style="font-size: 18px; font-weight: 600;"></span><br>
+                <div class="check-btn" style="position: fixed; left: 50%; margin-bottom: 15px;">
+                    <button id="check-out-btn" type="submit"  style="background-color: rgb(1, 1, 22); color: #FFFFFF; padding: 10px 30px; margin-top: 20px; border-radius: 10px;">Check Out</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- start main section -->
+    <main>
+        <!-- start banner section -->
+        <section class="banner">
+            <div class="banner-content">
+                <h1 class="banner-content-title">Mi LED TV 4A PRO 32</h1>
+                <div class="banner-content-details">
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolo</p>
+                    <p>do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                    <p>Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                <p class="banner-content-price">New Product</p>
+                <div class="banner-content-below">
+                    <!-- <button class="banner-content-btn">Buy Now</button> -->
+                    <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                </div>
+            </div>
+
+            <div class="banner-img">
+                <img style="width: 402px; height: 378px;" src="../assets/tv.png" alt="">
+            </div>
+        </section>
+        <!-- end banner section -->
+
+        <!-- categories section -->
+        <section class="products">
+            <h1 class="categories-title">Categories</h1>
+            <div class="categories">
+                <div class="categories-watch" id="watch-div">
+                    <div>Watch</div>
+                    <img src="../assets/watch.png" alt="">
+                </div>
+                <div style="background-color: #FF589B;" class="categories-watch" id="bag-div">
+                    <div>Bag</div>
+                    <img src="../assets/bag.png" alt="">
+                </div>
+                <div style="background-color: #4289FF;" class="categories-watch" id="shoes-div">
+                    <div>Shoes</div>
+                    <img src="../assets/shoes.png" alt="shoes photo">
+                </div>
+            </div>
+        </section>
+        <!-- end categories section -->
+
+        <!-- start shoes section here -->
+        <section class="shoes">
+            <h1 class="shoes-title">Shoes</h1>
+            <div class="shoes-parent">
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images" id="shoes-img" src="../assets/shoe-1.png" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2 id="shoes-title">Reebok Dart Men’s Shoes</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price" >$<span id="price">1289</span></p>
+                        <div class="button">
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images" src="../assets/shoe-2.png" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok Pump</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images" src="../assets/shoe-3.png" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok All Terrain</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end shoes section here -->
+        <!-- bag section start here -->
+        <section class="shoes">
+            <h1 class="shoes-title">Bags</h1>
+            <div class="shoes-parent">
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images" style="height: 250px;" src="../assets/bag-1.png" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok Dart Men’s Shoes</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <!-- <button class="buy-btn">Buy Now<i class="fa-solid fa-arrow-right btn-icon"></i></button> -->
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images" style="height: 250px;" src="../assets/bag-2.png" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok Pump</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <!-- <button class="buy-btn">Buy Now<i class="fa-solid fa-arrow-right btn-icon"></i></button> -->
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images" style="height: 250px;" src="../assets/bag-3.png" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok All Terrain</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <!-- <button class="buy-btn">Buy Now<i class="fa-solid fa-arrow-right btn-icon"></i></button> -->
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- bag section end here -->
+        <!-- watch section start here -->
+         <section class="shoes">
+            <h1 class="shoes-title">Watches</h1>
+            <div class="shoes-parent">
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images watch"  style="height: 250px; width: 360px;" src="../assets/watches/2.jpg" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok Dart Men’s Shoes</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <!-- <button class="buy-btn">Buy Now<i class="fa-solid fa-arrow-right btn-icon"></i></button> -->
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images watch" style="height: 250px; width: 360px;" src="../assets/watches/50.jpg" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok Pump</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <!-- <button class="buy-btn">Buy Now<i class="fa-solid fa-arrow-right btn-icon"></i></button> -->
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shoes-card">
+                    <figure>
+                        <img class="images watch" style="height: 250px; width: 360px;" src="../assets/watches/55.jpg" alt="">
+                    </figure>
+                    <div class="shoe-details">
+                        <h2>Reebok All Terrain</h2>
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
+                        <p class="price">$ <span id="price">1289</span></p>
+                        <div class="button">
+                            <!-- <button class="buy-btn">Buy Now<i class="fa-solid fa-arrow-right btn-icon"></i></button> -->
+                            <button class="add-btn">Add to Cart<i class="fa-solid fa-arrow-right btn-icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- watch section end here -->
+
+    </main>
+    <!-- end main section -->
+
+    <!-- start footer section -->
+    <footer class="footer">
+        <section class="footer-content">
+            <h3 class="footer-content-title">Shop<span>Lio</span> <span class="h3-span">Products</span></h3>
+            <p class="footer-content-details">Copyright © 2025 ShopLio Products</p>
+            <p class="footer-content-details">All rights reserved</p>
+            <div class="footer-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </section>
+    </footer>
+    <!-- javaScript file -->
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
