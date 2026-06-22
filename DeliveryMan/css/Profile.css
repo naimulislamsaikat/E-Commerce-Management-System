@@ -1,0 +1,80 @@
+/* Body */
+body {
+  margin: 0;
+  padding-top: 80px;   
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 100vh;   
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+
+.from {
+  border: 2px solid rgb(232, 222, 222);
+  padding: 25px;
+  margin: 40px auto;
+  width: 450px;
+  background-color: rgb(252, 241, 241);
+  border-radius: 10px;
+}
+
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+
+/* Navbar */
+.navbar {
+  position: fixed;      
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #3498db;
+  color: white;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f1f1f1;
+}
